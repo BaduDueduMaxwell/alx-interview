@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const request = require('request');
+const request = require("request");
 
 const movieId = process.argv[2];
 if (!movieId) {
