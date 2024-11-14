@@ -1,10 +1,10 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
-const request = require('request');
+const request = require("request");
 
 const movieId = process.argv[2];
 if (!movieId) {
-  console.error('Usage: ./0-starwars_characters.js <Movie ID>');
+  console.error("Usage: ./0-starwars_characters.js <Movie ID>");
   process.exit(1);
 }
 
@@ -12,12 +12,12 @@ const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 request(url, (error, response, body) => {
   if (error) {
-    console.error('Error fetching movie:', error);
+    console.error("Error fetching movie:", error);
     return;
   }
 
   if (response.statusCode !== 200) {
-    console.error('Movie not found or network issue');
+    console.error("Movie not found or network issue");
     return;
   }
 
@@ -29,7 +29,7 @@ request(url, (error, response, body) => {
 
     request(characters[index], (error, response, body) => {
       if (error) {
-        console.error('Error fetching character:', error);
+        console.error("Error fetching character:", error);
         return;
       }
 
